@@ -29,6 +29,35 @@ Some prompts to answer:
 
 You can include a simple diagram or bullet list if helpful.
 
+## How The System Works
+
+Music recommendation systems use information about users and songs to predict what someone might enjoy listening to. Larger platforms use listening history, likes, skips, and patterns from other users. My project will focus on content-based filtering, which compares song features to a user's music preferences.
+
+The recommender will use genre, mood, and energy to calculate a score for each song. Songs with higher scores will appear first in the recommendations.
+
+### Algorithm Recipe
+
+- Genre match: +2.0 points
+- Mood match: +1.0 point
+- Energy similarity: 1.0 minus the absolute difference between the song's energy and the user's preferred energy
+- Rank songs from highest to lowest score and return the top recommendations.
+
+### Song Features
+
+- Genre
+- Mood
+- Energy
+- Tempo (BPM)
+
+### User Profile
+
+- Favorite genre: Pop
+- Favorite mood: Happy
+- Target energy: 0.8
+
+### Potential Limitations
+
+This system might favor certain genres too much because genre matches receive the most points. It also cannot learn from listening history, and a small song dataset could limit the variety of recommendations.
 ---
 
 ## Getting Started
